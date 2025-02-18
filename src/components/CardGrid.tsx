@@ -1,5 +1,4 @@
 import { Product } from "../types/Product"
-import imgPlaceholder from "./assets/landscape-placeholder-svgrepo-com.svg"
 import Card from "./Card"
 
 interface CardGridProps {

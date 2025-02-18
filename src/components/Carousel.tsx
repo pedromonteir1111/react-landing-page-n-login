@@ -8,12 +8,12 @@ export default function Carousel({ images }: CarouselProps) {
     const [index, setIndex] = useState(0);
 
     function nextImage() {
-        setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
     }
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+            nextImage()
         }, 5000);
 
         return () => clearInterval(interval);

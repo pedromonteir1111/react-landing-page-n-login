@@ -2,7 +2,7 @@ import oldImg from "../assets/images/WhatsApp Image 2025-02-18 at 20.01.17.jpeg"
 
 export default function AboutSection() {
     return (
-        <div className='my-10 lg:mx-30 p-10 lg:rounded-4xl bg-yellow-300 '>
+        <div className='my-10 lg:mx-30 p-10 lg:rounded-4xl bg-yellow-300 shadow-lg'>
             <h1 id="historia" className='text-5xl font-extrabold py-10 lg:px-20 scroll-mt-25'>Nossa história</h1>
 
             <div className='flex flex-col lg:flex-row items-center p-10'>

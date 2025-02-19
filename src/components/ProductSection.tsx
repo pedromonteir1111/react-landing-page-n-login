@@ -10,14 +10,14 @@ import necesserie from "../assets/images/WhatsApp Image 2025-02-18 at 19.53.59.j
 import estojo from "../assets/images/WhatsApp Image 2025-02-18 at 19.54.52.jpeg"
 
 const PRODUCTS: Product[] = [
-  { name: "Bolsa", img: bolsa, description: "banana banana banana banana banana banana banana banana banana" },
-  { name: "Shoulder bag", img: shoulderBag, description: "Necessaire compacta e estilosa." },
-  { name: "Carteira", img: carteira, description: "descrição" },
-  { name: "Clutch", img: clutch, description: "descrição" },
+  { name: "Bolsas", img: bolsa, description: "banana banana banana banana banana banana banana banana banana" },
+  { name: "Shoulder bags", img: shoulderBag, description: "Necessaire compacta e estilosa." },
+  { name: "Carteiras", img: carteira, description: "descrição" },
+  { name: "Clutchs", img: clutch, description: "descrição" },
   { name: "Porta Óculos", img: portaOculos, description: "descrição" },
-  { name: "Moedeira", img: moedeira, description: "descrição" },
-  { name: "Necesserie", img: necesserie, description: "descrição" },
-  { name: "Estojo", img: estojo, description: "descrição" },
+  { name: "Moedeiras", img: moedeira, description: "descrição" },
+  { name: "Necesseries", img: necesserie, description: "descrição" },
+  { name: "Estojos", img: estojo, description: "descrição" },
 ];
 
 export default function ProductSection() {

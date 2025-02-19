@@ -1,28 +1,14 @@
-import AboutSection from './components/AboutSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar'
-import ProductSection from './components/ProductSection';
-import TopBanner from './components/TopBanner';
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <>
-      <Navbar/>
-
-      {/*parte de cima (logo e carousel)*/}
-      <TopBanner/>
-
-      {/*nossos produtos*/}
-      <ProductSection/>
-
-      {/*Sobre nos*/}
-      <AboutSection/>
-
-      {/*contato*/}
-      <ContactSection/>
-
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
     </>
   )
 }

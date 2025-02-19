@@ -1,8 +1,15 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import blackLogo from "../assets/images/Carimbo MM arabesco 8x7,5-1.png"
 import whiteLogo from "../assets/images/logo-branco.png"
 
 export default function Navbar(){
+
+    const navigate = useNavigate()
+
+    const goToLogin = () => {
+        navigate("/login");
+    };
 
     const [isMenuExpanded, setIsMenuExpanded] = useState(false)
 
@@ -60,14 +67,22 @@ export default function Navbar(){
                         </li>
                     </ul>
                 </div>
+                
+                <div className="flex items-center">
+                    <button className={`hidden md:block cursor-pointer text-white font-bold px-13 border-2 py-2 rounded-xl transition hover:bg-gradient-to-tr hover:from-cyan-400 hover:to-pink-500 
+                        ${hasScrolled || isMenuExpanded ? "bg-zinc-700 border-zinc-700 shadow-lg hover:border-white" : "text-white"}`} onClick={goToLogin}>
+                        Login
+                    </button>
 
-                <button onClick={toggleMenu} className="md:hidden">
-                    <svg viewBox="0 0 100 80" width="40" height="40">
-                        <rect width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
-                        <rect y="30" width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
-                        <rect y="60" width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
-                    </svg>
-                </button>
+                    
+                    <button onClick={toggleMenu} className="md:hidden">
+                        <svg viewBox="0 0 100 80" width="40" height="40">
+                            <rect width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
+                            <rect y="30" width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
+                            <rect y="60" width="100" height="10" fill={`${hasScrolled || isMenuExpanded ? "black" : "white"}`}></rect>
+                        </svg>
+                    </button>
+                </div>                          
             </div> 
 
             {isMenuExpanded ? (
@@ -75,6 +90,7 @@ export default function Navbar(){
                     <li className="p-3"><a href="#produtos">Nossos produtos</a></li>
                     <li className="p-3"><a href="#historia">Nossa história</a></li>
                     <li className="p-3"><a href="#contato">Contato</a></li>
+                    <button className="p-3 cursor-pointer text-white font-bold px-13 border-2 py-2 rounded-xl transition bg-zinc-700 border-zinc-700 shadow-md" onClick={goToLogin}>Login</button>
                 </ul> 
             ): null}         
         </nav>       

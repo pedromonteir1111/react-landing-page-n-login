@@ -17,7 +17,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     const logout = () => {
-        setUser(null); // Remove o usuário
+        setUser(null)
     }
 
     return (
@@ -34,5 +34,5 @@ export function useAuth() {
         throw new Error("useAuth deve ser usado dentro de um AuthProvider")
     }
 
-    return context;
+    return context
 }

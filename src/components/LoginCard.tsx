@@ -17,25 +17,33 @@ export default function LoginCard() {
     const getUsers = () => JSON.parse(localStorage.getItem("users") || "[]");
 
     function handleRegister() {
+
         const users = getUsers()
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!name.trim() || !email.trim() || !password.trim()) {
-            setMessage("Todos os campos devem ser preenchidos.");
-            setSuccess(false);
-            return;
+            setMessage("Todos os campos devem ser preenchidos.")
+            setSuccess(false)
+            return
+        }
+
+        if (!emailRegex.test(email)) {
+            setMessage("Por favor, insira um email válido.")
+            setSuccess(false)
+            return
         }
 
         if (users.some((user: any) => user.email === email)) {
             setMessage("Este email já está cadastrado.")
             setSuccess(false)
-            return;
+            return
         }
 
         users.push({ name, email, password })
         localStorage.setItem("users", JSON.stringify(users))
         setMessage("Conta criada com sucesso! Faça login.")
         setSuccess(true)
-        setIsLoginForm(true);
+        setIsLoginForm(true)
     };
 
     // Função para realizar login
@@ -45,13 +53,13 @@ export default function LoginCard() {
         const user = users.find((user: any) => user.email === email && user.password === password)
 
         if (user) {
-            setMessage("");
-            setSuccess(true);
-            login(user.name, user.email); // Agora passando também o nome
-            navigate("/");
+            setMessage("")
+            setSuccess(true)
+            login(user.name, user.email)
+            navigate("/")
         } else {
-            setMessage("Email ou senha incorretos.");
-            setSuccess(false);
+            setMessage("Email ou senha incorretos.")
+            setSuccess(false)
         }
     };
 
@@ -108,7 +116,7 @@ export default function LoginCard() {
 
                     <span className="mt-10 text-sm text-gray-500">
                         {isLoginForm ? "Ainda não tem uma conta?" : "Já tem uma conta?"}{" "}
-                        <button className="underline" onClick={() => {
+                        <button className="cursor-pointer underline" onClick={() => {
                             setIsLoginForm(!isLoginForm)
                             setMessage("")
                             setSuccess(true)

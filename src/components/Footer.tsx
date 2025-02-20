@@ -4,7 +4,7 @@ import whatsIcon from "../assets/images/icons8-whatsapp-48.png"
 
 export default function Footer() {
     return (
-        <footer className="relative bg-yellow-300 py-20 px-100
+        <footer className="relative bg-yellow-300 py-20 px-20 md:px-50 lg:px-100
         after:absolute after:h-[2px] after:bg-gray-400 after:w-[40%] after:left-1/2 after:-translate-x-1/2 after:bottom-[40px]">
             <div className="flex items-center justify-evenly">
                 <a href="https://www.instagram.com/mariameloatelie2/" target="_blank" rel="noopener noreferrer">
